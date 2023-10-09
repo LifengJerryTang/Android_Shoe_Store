@@ -1,19 +1,21 @@
 package com.udacity.shoestore.screens.login
 
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.models.User
+
 class LoginFragment: Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
+    private val user: User = User("", "")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +33,8 @@ class LoginFragment: Fragment() {
             onLogin(view)
         }
 
+        binding.user = user
+
         return binding.root
     }
 
@@ -40,15 +44,17 @@ class LoginFragment: Fragment() {
         if (loginValid) {
             view.findNavController()
                 .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        } else {
+            Toast.makeText(context, "Please check your information!", Toast.LENGTH_LONG).show()
         }
     }
 
     private fun validateLoginInfo(): Boolean {
 
-        val email: String = binding.email.text.toString()
-        val password: String = binding.password.text.toString()
+        user.email = binding.email.text.toString()
+        user.password = binding.email.text.toString()
 
-        if (email.isBlank() || password.isEmpty()) {
+        if (user.email.isBlank() || user.password.isEmpty()) {
             return false
         }
 

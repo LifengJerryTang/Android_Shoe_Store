@@ -6,7 +6,8 @@
     <string name="password_hint">Please enter your password</string>
     <string name="login">Login</string>
     <string name="welcome_text">Hello! Welcome to the Shoe Store where you can purchase shoes!
-        Please click the instruction button to get started! Have a great shoe purchasing journey!
+        Please click the \'Instructions\' button to get started! Have a great shoe purchasing journey!
     </string>
     <string name="welcome">WELCOME</string>
+    <string name="instruction">Instructions</string>
 </resources>

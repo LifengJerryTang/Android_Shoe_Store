@@ -2,12 +2,16 @@
 
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="com.udacity.shoestore.screens.login.LoginFragment"
     >
+
+    <data>
+        <variable
+            name="user"
+            type="com.udacity.shoestore.models.User" />
+    </data>
+    
     <LinearLayout
         android:id="@+id/login_layout"
         android:layout_width="match_parent"
@@ -31,6 +35,7 @@
             android:inputType="textEmailAddress"
             android:layout_marginTop="5dp"
             android:height="50dp"
+            android:text="@{user.email}"
             android:hint="@string/email_hint"/>
 
         <TextView
@@ -49,6 +54,7 @@
             android:inputType="textPassword"
             android:layout_marginTop="5dp"
             android:height="50dp"
+            android:text="@{user.password}"
             android:hint="@string/password_hint"/>
 
         <Button
