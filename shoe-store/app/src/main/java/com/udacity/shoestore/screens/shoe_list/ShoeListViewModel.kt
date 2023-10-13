@@ -29,4 +29,8 @@ class ShoeListViewModel: ViewModel() {
                             "this upper features at least 50% recycled content.")
         )
     }
+
+    fun addShoeItem(newShoe: Shoe) {
+        _listOfShoes.value?.add(newShoe)
+    }
 }

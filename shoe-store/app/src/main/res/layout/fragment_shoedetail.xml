@@ -3,6 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.udacity.shoestore.screens.shoe_list.ShoeDetailFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.screens.shoe_list.ShoeListViewModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,6 +31,7 @@
             android:inputType="text"
             android:layout_marginTop="20dp"
             android:hint="Shoe name"/>
+
         <EditText
             android:id="@+id/shoeCompany"
             android:layout_width="match_parent"
@@ -43,7 +51,7 @@
             android:hint="Shoe Size"/>
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/shoeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start|top"
@@ -52,5 +60,29 @@
             android:height="100dp"
             android:inputType="textMultiLine" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:background="@color/colorAccent"
+                android:textColor="#FFFFFF"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="145dp"
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:text="Save" />
+        </LinearLayout>
     </LinearLayout>
 </layout>
