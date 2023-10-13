@@ -25,7 +25,8 @@
             <ListView
                 android:id="@+id/listOfShoeView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/shoe_list_item"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/addShoeButton"

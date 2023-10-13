@@ -10,5 +10,49 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/shoeDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_gravity="center_horizontal"
+            android:text="Type Shoe Detail" />
+
+        <EditText
+            android:id="@+id/shoeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edit_text"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            android:hint="Shoe name"/>
+        <EditText
+            android:id="@+id/shoeCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edit_text"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            android:hint="Shoe Company"/>
+
+        <EditText
+            android:id="@+id/shoeSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edit_text"
+            android:layout_marginTop="20dp"
+            android:inputType="text"
+            android:hint="Shoe Size"/>
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|top"
+            android:layout_marginTop="20dp"
+            android:hint="Shoe Description"
+            android:height="100dp"
+            android:inputType="textMultiLine" />
+
     </LinearLayout>
 </layout>
