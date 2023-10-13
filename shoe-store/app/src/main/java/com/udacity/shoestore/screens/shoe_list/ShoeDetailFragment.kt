@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
@@ -19,7 +20,7 @@ class ShoeDetailFragment: Fragment() {
 
     private lateinit var binding: FragmentShoedetailBinding
 
-    private lateinit var viewModel: ShoeListViewModel
+    private val viewModel: ShoeListViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,10 +32,6 @@ class ShoeDetailFragment: Fragment() {
             container,
             false
         )
-
-        binding.lifecycleOwner = this
-
-        viewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
 
         binding.saveButton.setOnClickListener {view: View ->
             addShoeItem()
@@ -53,19 +50,25 @@ class ShoeDetailFragment: Fragment() {
 
     private fun addShoeItem() {
 
-        if (binding.shoeName.text.isBlank() || binding.shoeSize.text.isBlank()
-            || binding.shoeCompany.text.isBlank() || binding.shoeDescription.text.isBlank()) {
+        val shoeName = binding.shoeName.text.toString()
+        val shoeSize = binding.shoeSize.text.toString()
+        val shoeComp = binding.shoeCompany.text.toString()
+        val shoeDesc =  binding.shoeDescription.text.toString()
+
+
+        if (shoeName.isBlank() || shoeSize.isBlank() || shoeComp.isBlank()
+            || shoeDesc.isBlank()) {
             Toast.makeText(context, "Make sure you enter all shoe info!",
                 Toast.LENGTH_LONG).show()
         }
 
         val newShoeItem: Shoe = Shoe(
-            binding.shoeName.text.toString(),
-            parseDouble(binding.shoeSize.text.toString()),
-            binding.shoeCompany.text.toString(),
-            binding.shoeDescription.text.toString()
+            shoeName, parseDouble(shoeSize), shoeComp, shoeDesc
         )
 
         viewModel.addShoeItem(newShoeItem)
+
+        Toast.makeText(context, "SUCCESSFULLY added your new $shoeName !",
+            Toast.LENGTH_LONG).show()
     }
 }

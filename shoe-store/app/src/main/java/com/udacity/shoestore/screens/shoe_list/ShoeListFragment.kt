@@ -33,7 +33,7 @@ class ShoeListFragment: Fragment() {
 
         binding.lifecycleOwner = this
 
-        viewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[ShoeListViewModel::class.java]
 
         viewModel.listOfShoes.observe(viewLifecycleOwner
         ) { listOfShoes ->
