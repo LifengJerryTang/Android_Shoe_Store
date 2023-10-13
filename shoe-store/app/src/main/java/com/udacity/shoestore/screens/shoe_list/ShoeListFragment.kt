@@ -1,6 +1,5 @@
 package com.udacity.shoestore.screens.shoe_list
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoelistBinding
+import com.udacity.shoestore.databinding.ShoeListItemBinding
 import com.udacity.shoestore.models.Shoe
 
 class ShoeListFragment: Fragment() {
@@ -49,6 +49,23 @@ class ShoeListFragment: Fragment() {
     }
 
     private fun populateShoeList(listOfShoes: MutableList<Shoe>) {
-        binding.listOfShoeView.adapter = ShoeListAdapter(context as Context, listOfShoes)
+        listOfShoes.forEach {
+
+            val listBinding = ShoeListItemBinding.inflate(
+                LayoutInflater.from(requireContext()),
+                binding.shoeList,
+                false
+            )
+
+            with(listBinding) {
+                shoeName.text = it.name
+                shoeCompany.text = it.company
+                shoeSize.text = it.size.toString()
+                shoeDescription.text = it.description
+            }
+
+            binding.shoeList.addView(listBinding.root)
+
+        }
     }
 }
