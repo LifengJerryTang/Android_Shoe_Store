@@ -8,14 +8,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/titleShoeList"
-            android:text="@string/shoe_list"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/large_title" />
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
@@ -28,6 +20,7 @@
                 android:id="@+id/shoeList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="50dp"
                 android:orientation="vertical" />
 
         </ScrollView>

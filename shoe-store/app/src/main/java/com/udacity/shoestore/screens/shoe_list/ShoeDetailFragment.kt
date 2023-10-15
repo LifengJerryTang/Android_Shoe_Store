@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -43,6 +44,8 @@ class ShoeDetailFragment: Fragment() {
             view.findNavController().navigate(ShoeDetailFragmentDirections
                 .actionShoeDetailFragmentToShoeListFragment())
         }
+
+        (activity as AppCompatActivity).supportActionBar?.title = "Shoe Detail"
 
         return binding.root
 

@@ -2,6 +2,7 @@
 
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.udacity.shoestore.screens.login.LoginFragment"
     >
@@ -20,10 +21,18 @@
         android:paddingStart="@dimen/padding"
         android:paddingEnd="@dimen/padding">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="299dp"
+            android:layout_height="172dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/sample_shoe_image" />
+
         <TextView
             android:id="@+id/emailLabel"
             android:text="@string/email"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="20dp"
             style="@style/labelStyle">
         </TextView>
 
@@ -58,6 +67,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login" />
+
+
 
     </LinearLayout>
 </layout>
