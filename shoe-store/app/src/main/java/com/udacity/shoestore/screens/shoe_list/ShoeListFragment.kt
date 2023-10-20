@@ -2,6 +2,9 @@ package com.udacity.shoestore.screens.shoe_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +12,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoelistBinding
 import com.udacity.shoestore.databinding.ShoeListItemBinding
@@ -48,8 +53,10 @@ class ShoeListFragment: Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "Shoe List"
 
+
         return binding.root
     }
+
 
     private fun populateShoeList(listOfShoes: MutableList<Shoe>) {
         listOfShoes.forEach {

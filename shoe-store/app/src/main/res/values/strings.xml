@@ -15,4 +15,5 @@
     <string name="instructions_text">In this shoe store, feel free to view and add shoes. Have a good time!</string>
     <string name="view_shoe_detail">View shoe detail</string>
     <string name="shoe_list">Shoe List</string>
+    <string name="logout">Logout</string>
 </resources>

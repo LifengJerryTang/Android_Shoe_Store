@@ -8,7 +8,13 @@
         <variable
             name="viewModel"
             type="com.udacity.shoestore.screens.shoe_list.ShoeListViewModel" />
+        
+        <variable
+            name="newShoe"
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
+
+<!--    The views are being laid out in a single column here, so a linear layout is perfect-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +37,7 @@
             style="@style/edit_text"
             android:inputType="text"
             android:layout_marginTop="20dp"
+            android:text="@={newShoe.name}"
             android:hint="Shoe name"/>
 
         <EditText
@@ -40,6 +47,7 @@
             style="@style/edit_text"
             android:inputType="text"
             android:layout_marginTop="20dp"
+            android:text="@={newShoe.company}"
             android:hint="Shoe Company"/>
 
         <EditText
@@ -58,9 +66,11 @@
             android:gravity="start|top"
             android:layout_marginTop="20dp"
             android:hint="Shoe Description"
+            android:text="@={newShoe.description}"
             android:height="100dp"
             android:inputType="textMultiLine" />
 
+<!--        A horizontal linear layout is necessary here because these two buttons are organized horizontally.-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

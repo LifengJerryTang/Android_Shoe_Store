@@ -12,7 +12,9 @@
             name="user"
             type="com.udacity.shoestore.models.User" />
     </data>
-    
+
+<!--    The organization of the views is fairly simple here and they are being laid out in a single column;
+        thus, a linear layout is perfect here.-->
     <LinearLayout
         android:id="@+id/loginLayout"
         android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.udacity.shoestore.screens.shoe_list
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,9 @@ class ShoeDetailFragment: Fragment() {
     private lateinit var binding: FragmentShoedetailBinding
 
     private val viewModel: ShoeListViewModel by activityViewModels()
+
+    private val newShoe: Shoe = Shoe("", 0.0, "", "")
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +37,8 @@ class ShoeDetailFragment: Fragment() {
             container,
             false
         )
+
+        binding.newShoe = newShoe
 
         binding.saveButton.setOnClickListener {view: View ->
             addShoeItem()
@@ -53,25 +59,17 @@ class ShoeDetailFragment: Fragment() {
 
     private fun addShoeItem() {
 
-        val shoeName = binding.shoeName.text.toString()
-        val shoeSize = binding.shoeSize.text.toString()
-        val shoeComp = binding.shoeCompany.text.toString()
-        val shoeDesc = binding.shoeDescription.text.toString()
-
-
-        if (shoeName.isBlank() || shoeSize.isBlank() || shoeComp.isBlank()
-            || shoeDesc.isBlank()) {
+        if (newShoe.name.isBlank() || newShoe.company.isBlank() || newShoe.description.isBlank()
+            || binding.shoeSize.toString().isBlank()) {
             Toast.makeText(context, "Make sure you enter all shoe info!",
                 Toast.LENGTH_LONG).show()
         }
 
-        val newShoeItem: Shoe = Shoe(
-            shoeName, parseDouble(shoeSize), shoeComp, shoeDesc
-        )
+        newShoe.size = parseDouble(binding.shoeSize.text.toString())
 
-        viewModel.addShoeItem(newShoeItem)
+        viewModel.addShoeItem(newShoe)
 
-        Toast.makeText(context, "SUCCESSFULLY added your new $shoeName !",
+        Toast.makeText(context, "SUCCESSFULLY added your new ${newShoe.name} !",
             Toast.LENGTH_LONG).show()
     }
 }

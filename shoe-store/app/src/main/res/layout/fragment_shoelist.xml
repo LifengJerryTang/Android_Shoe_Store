@@ -5,9 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.udacity.shoestore.screens.shoe_list.ShoeListFragment">
 
+<!--    Using a constraint layout here mainly because of the floating action button. It's easier
+        to place the floating action button at a specific position with constraint layout-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+<!--        Since the shoe list might not fit the entire screen, a scroll view is
+            necessary here-->
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
@@ -16,6 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+<!--            Scroll view can only have 1 child, so a linear layout is used to hold the shoe list.-->
             <LinearLayout
                 android:id="@+id/shoeList"
                 android:layout_width="match_parent"

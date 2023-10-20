@@ -4,6 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    I chose to use constraint layout here because of wanting to experiment with constraint layout;
+        However, I felt like a linear layout can be used here instead since the organization of the views a re fairly simple.-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

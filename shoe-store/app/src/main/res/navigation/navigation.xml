@@ -39,6 +39,9 @@
             android:id="@+id/action_instructionsFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
             app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_instructionsFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoeListFragment"
