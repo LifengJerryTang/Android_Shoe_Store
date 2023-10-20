@@ -56,7 +56,7 @@ class ShoeDetailFragment: Fragment() {
         val shoeName = binding.shoeName.text.toString()
         val shoeSize = binding.shoeSize.text.toString()
         val shoeComp = binding.shoeCompany.text.toString()
-        val shoeDesc =  binding.shoeDescription.text.toString()
+        val shoeDesc = binding.shoeDescription.text.toString()
 
 
         if (shoeName.isBlank() || shoeSize.isBlank() || shoeComp.isBlank()
